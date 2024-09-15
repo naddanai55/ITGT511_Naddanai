@@ -4,7 +4,7 @@ pygame.init()
 
 screen = pygame.display.set_mode([500, 500])
 
-speed = 0.01  
+speed = 0.1  
 target_pos = (250, 250)
 agents = [(i * 100, 450) for i in range(5)]
 
