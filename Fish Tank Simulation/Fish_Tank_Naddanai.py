@@ -15,6 +15,7 @@ ALIGNMENT_FACTOR = 0.01  # Controls how strongly agents align their direction wi
 SEPARATION_FACTOR = 0.01  # Controls how strongly agents avoid each other
 SEPARATION_DIST = 25  # Minimum distance to maintain between agents
 
+#Control Factor
 FOODSEEK_FACTOR = 0.5
 OBSTACLES_FACTOR = 1
 
@@ -85,12 +86,12 @@ class Agent:
         force = pygame.Vector2(x, y)
         self.acceleration += force / self.mass
 
-    def seek(self, x, y):
-        # Calculate the direction towards a target point and apply a small force in that direction
-        d = pygame.Vector2(x, y) - self.position
-        d = d.normalize() * 0.1  # Adjust the force magnitude
-        seeking_force = d
-        self.apply_force(seeking_force.x, seeking_force.y)
+    # def seek(self, x, y):
+    #     # Calculate the direction towards a target point and apply a small force in that direction
+    #     d = pygame.Vector2(x, y) - self.position
+    #     d = d.normalize() * 0.1  # Adjust the force magnitude
+    #     seeking_force = d
+    #     self.apply_force(seeking_force.x, seeking_force.y)
 
     def coherence(self, agents):
         # Steer towards the average position (center of mass) of neighboring agents
@@ -137,7 +138,7 @@ class Agent:
             v /= agent_in_range_count  # Calculate average velocity
             alignment_force = v * ALIGNMENT_FACTOR  # Apply alignment force
             self.apply_force(alignment_force.x, alignment_force.y)
-
+    #sees the food nearby
     def food_sight_range(self, food_pos):
         dist = self.position.distance_to(food_pos)
         if dist <= self.sight_range_for_food:
@@ -164,7 +165,7 @@ class Agent:
             if (pygame.time.get_ticks() - self.hungrytime) / 1000 >= time_ran:
                 self.is_hungry = random.random() < 0.2
                 self.hungrytime = pygame.time.get_ticks()
-
+    #Eat
     def is_on_food(self, food_pos): 
         pos_diff = self.position - food_pos
         if abs(pos_diff.x) <= 1 and abs(pos_diff.y) <= 1:
@@ -184,6 +185,7 @@ pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()  # Initialize a clock to manage frame rate
 
+#use os for setting path
 sprite_path_betta = os.path.join(os.getcwd(),"sprite","betta.png")
 sprite_path_trex = os.path.join(os.getcwd(),"sprite","trex.png")
 sprite_path_tree1 = os.path.join(os.getcwd(),"sprite","rz_tree1.png")
@@ -247,9 +249,10 @@ while running:
         elif agent.position.y < 0:
             agent.position.y = HEIGHT
 
+    #draw obstacles
     pygame.draw.circle(screen, (153, 255, 255), tree_pos, 120, 1)
     screen.blit(obstacles_sprite, tree_pos - offset_skull)
-
+    #draw food
     if food_pos:
         pygame.draw.circle(screen, (128, 0, 0), food_pos, 5)
 
