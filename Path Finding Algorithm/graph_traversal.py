@@ -86,12 +86,13 @@ def dijkstra(grid, start, end):
     heapq.heappush(pq, (0, start))  
     distances = {start: 0}  
     previous = {start: None}  
-    visited = set()  
+    visited = []
+
     while pq: 
         current_distance, current_node = heapq.heappop(pq)
         if current_node in visited:
             continue
-        visited.add(current_node)
+        visited.append(current_node) 
 
         if current_node == end:
             break
@@ -106,7 +107,7 @@ def dijkstra(grid, start, end):
                     distances[neighbor] = distance  
                     previous[neighbor] = current_node  
                     heapq.heappush(pq, (distance, neighbor))
-    
+
     path = []
     node = end  
     while node is not None: 
