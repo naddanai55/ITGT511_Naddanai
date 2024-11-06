@@ -54,3 +54,7 @@ This repository is for the **ITGT511: Algorithms and AI for Computer Games** cla
 
 ![Fish Tank](https://github.com/naddanai55/ITGT511_Naddanai/blob/main/Pic/fsm%20pic.png)
 
+---
+### Path Finding Algorithm
+**Features:**
+
