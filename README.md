@@ -41,7 +41,7 @@ This repository is for the **ITGT511: Algorithms and AI for Computer Games** cla
    - **Diamond**
 5. **Guaranteed Mineral Drop:** If the player fails to receive a mineral after three consecutive digs, on the fourth dig, a mineral will be guaranteed to drop.If the player fails to receive a mineral after three consecutive digs, on the fourth dig, a mineral will be guaranteed to drop.
 
-![Fish Tank](https://github.com/naddanai55/ITGT511_Naddanai/blob/main/Pic/mining_game.png)
+![Mining Game](https://github.com/naddanai55/ITGT511_Naddanai/blob/main/Pic/mining_game.png)
 
 ---
 ### FSM Zombie Behavior
@@ -52,9 +52,18 @@ This repository is for the **ITGT511: Algorithms and AI for Computer Games** cla
  - **Attack:** Once the zombie gets close enough to the target (within attack range), it enters the attack state.
  - **Eat:** After attacking, if the zombie is positioned on top of the target (mouse position), it will transition into the eat state and simulate eating.
 
-![Fish Tank](https://github.com/naddanai55/ITGT511_Naddanai/blob/main/Pic/fsm%20pic.png)
+![Zombie Behavior](https://github.com/naddanai55/ITGT511_Naddanai/blob/main/Pic/fsm%20pic.png)
 
 ---
 ### Path Finding Algorithm
 **Features:**
+1. **Graph Traversal Visualization:** Demonstrates various pathfinding algorithms with live drawing.
+2. **Algorithm Colors:**
+   - **Red:** Depth-First Search
+   - **Blue:** Breadth-First Search
+   - **Black:** Dijkstra’s Algorithm
+3. **Goal Node:** The goal node is marked in green on the grid.
 
+![Path Finding](https://github.com/naddanai55/ITGT511_Naddanai/blob/main/Pic/path%20pic.png)
+
+---
