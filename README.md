@@ -18,7 +18,7 @@ Here is a video showcasing all my work for the ITGT511: AI for Computer Games
 
 **Value:**
 
-   **- Foundational in Pygame programming.**  
+   - Foundational in Pygame programming.  
 
 ![Pygame Agent](https://github.com/naddanai55/ITGT511_Naddanai/blob/main/Pic/Pygame%20Agent.png)
 
